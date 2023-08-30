@@ -1,0 +1,5 @@
+crm сыстема для больници
+(entity): больние(pains), врачи(doctors), лекарства(drugs)
+помещения(rooms), койки(beds)
+бюрократия(bureaucracy):  назначение(assignment), история болезьней(history of disease), виписка(viscera)
+
