@@ -1,6 +1,6 @@
 import BureaucracyModel
 
-class DoctorControler():
+class DoctorController():
     def __init__(self):
         self.arr1 = []  # Define arr1 as an instance variable
 
