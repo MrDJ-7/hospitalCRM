@@ -11,13 +11,13 @@ class UserView:
         span = ET.Element('span', attrib={'class': 'bar'})
         div.append(span)
         span.text = "All users\n"
-        tr = ET.Element('tr')
         table = ET.Element('table')
-        for x in listUsers:
+        for i in range(len(listUsers)):
+            tr = ET.Element('tr')
             td = ET.Element('td')
-            td.text = x
+            td.text = str(i+1) + " " + listUsers[i]
             tr.append(td)
-        table.append(tr)
+            table.append(tr)
         body.append(table)
         with open('output.html', 'wb') as f:
             tree = ET.ElementTree(html)
