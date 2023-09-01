@@ -2,7 +2,7 @@
 from xml.etree import ElementTree as ET
 
 class UserView:
-    def MakeHtml(self, listUsers):
+    def MakeHtml(self, listUsers, name):
         html = ET.Element('html')
         body = ET.Element('body')
         html.append(body)
@@ -19,7 +19,8 @@ class UserView:
             tr.append(td)
             table.append(tr)
         body.append(table)
-        with open('output.html', 'wb') as f:
+        name += '.htmal'
+        with open(name, 'wb') as f:
             tree = ET.ElementTree(html)
             print(tree)
             tree.write(f, encoding='utf-8', method='html')

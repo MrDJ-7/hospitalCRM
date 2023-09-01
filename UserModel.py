@@ -1,27 +1,37 @@
 import hashlib
 import FileUtil
+import enum
+
+
+class Status(enum.Enum):
+    PAIN = 1
+    DOCTOR = 2
+    ADMIN = 3
 
 
 class UsersModel:
     def __init__(self):
+        self.START_EMAIL_INDEX = 35
         self.arr1 = []  # Define arr1 as an instance variable
 
     def listAllUsers(self):
         listEmail = FileUtil.FileUtil.getAllFromFile("Users.txt")
         for i in range(len(listEmail)):
-            listEmail[i] = listEmail[i][33:]
+            listEmail[i] = listEmail[i][self.START_EMAIL_INDEX:]
         return listEmail
 
+    # @index:int
     def getOneUser(self, index):
+        # deprecated
+        # TO DO: recode
         if 0 <= index < len(self.arr1):  # Check if the index is within bounds
             return self.arr1[index]
         else:
             return None  # Return None if the index is out of bounds
 
-    def addUser(self, email, password):
-        x = hashlib.md5(password.encode()).hexdigest() + ' ' + email
+    def addUser(self, email, password, status):
+        x = hashlib.md5(password.encode()).hexdigest() + ' ' + str(status) + ' ' + email
         FileUtil.FileUtil().writeToFile(x, "Users.txt")
-
 
     def getUser(self, email):
         try:

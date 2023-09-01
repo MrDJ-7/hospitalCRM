@@ -11,7 +11,7 @@ class UserController:
         
         This message is sent from Python."""
 
-    def register(self, password, sender_email):
+    def register(self, password, sender_email, status):
         smtp_server = "smtp.elasticemail.com"
         port = 2525  # For starttls
         try:
@@ -34,7 +34,7 @@ class UserController:
             # qwa = UserModel.UsersModel()
             # qwa.addUser(# print(password1)
             # print(hashlib.md5(password.encode()).hexdigest())sender_email, password)
-            UserModel.UsersModel().addUser(sender_email, password)
+            UserModel.UsersModel().addUser(sender_email, password, status)
         except Exception as e:
             # Print any error messages to stdout
             print(e)
@@ -58,10 +58,10 @@ class UserController:
 
     def ViewAllUsers(self):
         listUsers = UserModel.UsersModel().listAllUsers()
-        print(listUsers)
-        UserView.UserView().MakeHtml(listUsers)
+        # print(listUsers)
+        UserView.UserView().MakeHtml(listUsers, "output")
 
 x = UserController()
-# x.register("123", "123@gmail.com")
+# x.register("123", "123@gmail.com", 1)
 # print(x.login("4E5067C7A00E6F51EA53EA6CCEAF926AFD6C", "dmytro26070707@gmail.com"))
 x.ViewAllUsers()
