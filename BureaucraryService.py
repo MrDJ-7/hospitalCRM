@@ -12,5 +12,9 @@ class BureacracyService:
         FileUtil.FileUtil().writeToFile(value, fileName)
 
     def viewViscera(self, email):
-        listViscera = FileUtil.FileUtil().getAllFromFile(email+".txt")
+        # print(email)
+        new = str(email)+".txt"
+        listViscera = FileUtil.FileUtil().getAllFromFile(new)
+        # print (listViscera)
+        UserView.UserView().MakeHtml(listViscera, str(email))
         

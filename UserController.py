@@ -58,8 +58,8 @@ class UserController:
 
     def ViewAllUsers(self):
         listUsers = UserModel.UsersModel().listAllUsers()
-        # print(listUsers)
-        UserView.UserView().MakeHtml(listUsers, "output")
+        print(listUsers)
+        UserView.UserView().MakeHtml(listUsers, 'output')
 
 x = UserController()
 # x.register("123", "123@gmail.com", 1)

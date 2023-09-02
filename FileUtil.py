@@ -27,6 +27,7 @@ class FileUtil:
             f.write(value + "\n")
     def getAllFromFile(self, fileName):
         listFile = []
+        # print(str(fileName))
         f = open(fileName, "r")
         lines = f.readlines()
         for line in lines:

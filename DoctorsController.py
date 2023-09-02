@@ -30,6 +30,7 @@ class DoctorController():
         BureaucraryService.BureacracyService().makeViscera(email)
 
     def viewViscera(self, email):
+        # print(email)
         BureaucraryService.BureacracyService().viewViscera(email)
 
 
@@ -43,4 +44,5 @@ qwa = DoctorController()
 # print(qwa.getOnePain(1))
 # qwa.deleteOnePain(2)
 # print(qwa.listAllPains())
-qwa.makeViscera("123@qwe.q")
+# qwa.makeViscera("123@qwe.q")
+qwa.viewViscera("123@qwe.q")

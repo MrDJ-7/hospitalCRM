@@ -10,7 +10,7 @@ class UserView:
         body.append(div)
         span = ET.Element('span', attrib={'class': 'bar'})
         div.append(span)
-        span.text = "All users\n"
+        # span.text = "All users\n"
         table = ET.Element('table')
         for i in range(len(listUsers)):
             tr = ET.Element('tr')
@@ -19,9 +19,9 @@ class UserView:
             tr.append(td)
             table.append(tr)
         body.append(table)
-        name += '.htmal'
+        name += ".html"
         with open(name, 'wb') as f:
             tree = ET.ElementTree(html)
-            print(tree)
+            # print(tree)
             tree.write(f, encoding='utf-8', method='html')
 
