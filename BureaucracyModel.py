@@ -14,7 +14,7 @@ class BureaucracyModel:
 
     def writeAssignment(self, pain_id, drug_id):
         f = open("Assignment.txt", "w")
-        f.write(drug_id + ' ' + pain_id + "\n")
+        f.write(drug_id + " " + pain_id + "\n")
         f.close()
 
     def checkAssignment(self, pain_id, drug_id):
@@ -24,8 +24,8 @@ class BureaucracyModel:
             index1 = line.find(" ")
             index2 = line.find("\n")
             temp_pain_id = line[:index1]
-            temp_drug_id = line[index1+1:index2]
-            if(temp_pain_id == pain_id and temp_drug_id == drug_id):
+            temp_drug_id = line[index1 + 1 : index2]
+            if temp_pain_id == pain_id and temp_drug_id == drug_id:
                 f.close()
                 raise Exception("Assignment already exist")
         f.close()

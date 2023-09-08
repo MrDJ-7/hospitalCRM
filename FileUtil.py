@@ -1,5 +1,6 @@
 import HelperUtil
 
+
 class FileUtil:
     def sortFileContents(self, fileName):
         with open(fileName, "r") as file:
@@ -11,7 +12,7 @@ class FileUtil:
         with open(fileName, "w") as file:
             file.writelines(lines)
         file.close()
-    
+
     def getFromFile(self, needle, haystack):
         f = open(haystack, "r")
         lines = f.readlines()
@@ -25,6 +26,7 @@ class FileUtil:
     def writeToFile(self, value, target):
         with open(target, "a") as f:
             f.write(value + "\n")
+
     def getAllFromFile(self, fileName):
         listFile = []
         # print(str(fileName))
@@ -35,6 +37,7 @@ class FileUtil:
             listFile.append(line[:index])
         f.close()
         return listFile
+
     def deleteSpecifiedLine(self, fileName, string_to_remove):
         # Считайте содержимое файла
         with open(fileName, "r") as file:
@@ -48,4 +51,3 @@ class FileUtil:
         with open(fileName, "w") as file:
             file.writelines(new_lines)
         file.close()
-    
